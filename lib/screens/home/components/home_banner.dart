@@ -30,17 +30,16 @@ class HomeBanner extends StatelessWidget {
                 Text(
                   "Discover my Amazing \nArt Space!",
                   style: Responsive.isDesktop(context)
-                      ? Theme.of(context).textTheme.headline3!.copyWith(
+                      ? Theme.of(context).textTheme.displaySmall!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           )
-                      : Theme.of(context).textTheme.headline5!.copyWith(
+                      : Theme.of(context).textTheme.headlineSmall!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                 ),
-                if (Responsive.isMobileLarge(context))
-                  const SizedBox(height: defaultPadding / 2),
+                if (Responsive.isMobileLarge(context)) const SizedBox(height: defaultPadding / 2),
                 MyBuildAnimatedText(),
                 SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
@@ -48,8 +47,7 @@ class HomeBanner extends StatelessWidget {
                     onPressed: () {},
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.symmetric(
-                          horizontal: defaultPadding * 2,
-                          vertical: defaultPadding),
+                          horizontal: defaultPadding * 2, vertical: defaultPadding),
                       backgroundColor: primaryColor,
                     ),
                     child: Text(
@@ -75,19 +73,15 @@ class MyBuildAnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       // it applies same style to all the widgets under it
-      style: Theme.of(context).textTheme.subtitle1!,
+      style: Theme.of(context).textTheme.titleMedium!,
       maxLines: 1,
       child: Row(
         children: [
           if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
-          if (!Responsive.isMobileLarge(context))
-            SizedBox(width: defaultPadding / 2),
+          if (!Responsive.isMobileLarge(context)) SizedBox(width: defaultPadding / 2),
           Text("I build "),
-          Responsive.isMobile(context)
-              ? Expanded(child: AnimatedText())
-              : AnimatedText(),
-          if (!Responsive.isMobileLarge(context))
-            SizedBox(width: defaultPadding / 2),
+          Responsive.isMobile(context) ? Expanded(child: AnimatedText()) : AnimatedText(),
+          if (!Responsive.isMobileLarge(context)) SizedBox(width: defaultPadding / 2),
           if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
         ],
       ),

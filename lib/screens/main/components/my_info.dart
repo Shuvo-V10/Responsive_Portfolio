@@ -20,11 +20,11 @@ class MyInfo extends StatelessWidget {
             ),
             Spacer(),
             Text(
-              "Abu Anwar",
-              style: Theme.of(context).textTheme.subtitle2,
+              "Robin Van Persie",
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             Text(
-              "Flutter Developer & Founder of \n The Flutter Way",
+              "Manchester United, United Kingdom",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w200,
