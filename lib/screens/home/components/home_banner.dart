@@ -12,10 +12,16 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
+      aspectRatio: Responsive.isMobile(context) ? 5 / 2 : 3,
       child: Stack(
         fit: StackFit.expand,
         children: [
+          // Container(
+          //   //padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+          //   decoration: const BoxDecoration(
+          //     image: DecorationImage(image: AssetImage("assets/images/bg.jpeg"), fit: BoxFit.cover),
+          //   ),
+          // ),
           Image.asset(
             "assets/images/bg.jpeg",
             fit: BoxFit.cover,
@@ -35,7 +41,7 @@ class HomeBanner extends StatelessWidget {
                             color: Colors.white,
                           )
                       : Theme.of(context).textTheme.headlineSmall!.copyWith(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.normal,
                             color: Colors.white,
                           ),
                 ),
@@ -81,6 +87,7 @@ class MyBuildAnimatedText extends StatelessWidget {
           if (!Responsive.isMobileLarge(context)) SizedBox(width: defaultPadding / 2),
           Text("I build "),
           Responsive.isMobile(context) ? Expanded(child: AnimatedText()) : AnimatedText(),
+          //AnimatedText(),
           if (!Responsive.isMobileLarge(context)) SizedBox(width: defaultPadding / 2),
           if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
         ],
