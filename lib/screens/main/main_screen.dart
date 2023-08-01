@@ -30,6 +30,7 @@ class MainScreen extends StatelessWidget {
       body: Center(
         child: Container(
           constraints: BoxConstraints(maxWidth: maxWidth),
+          padding: EdgeInsets.only(right: defaultPadding),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
